@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e22">
+  <meta name="description" content="Explore Lantern Quay in three level 3 adventures for Dungeons &amp; Dragons 5e. Start with a free encounter at the docks.">
+  <title>Lantern Quay | D&amp;D 5e Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./site.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="frame header-content">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>Lantern Quay</a>
+      <nav aria-label="Main">
+        <a href="#adventures">The adventures</a>
+        <a href="#quay">The map</a>
+        <a href="./free-encounter.html">Free encounter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <div class="frame hero-content">
+        <p class="eyebrow">A D&amp;D 5e harbour mystery</p>
+        <h1 id="title">The Bell Beneath<br><em>the Docks</em></h1>
+        <p class="hero-summary">A ship’s bell rings beneath the quay. Twice it has rung. Twice someone has vanished. Tonight, a ferry apprentice hears it whisper her name.</p>
+        <div class="actions">
+          <a class="button primary" href="#adventures">Explore the adventures</a>
+          <a class="button secondary" href="./free-encounter.html">Run the free encounter</a>
+        </div>
+      </div>
+    </section>
+
+    <dl class="facts frame" aria-label="Adventure details">
+      <div><dt>One evening</dt><dd>About two hours per adventure</dd></div>
+      <div><dt>3–5 players</dt><dd>A level 3 party and a Dungeon Master</dd></div>
+      <div><dt>D&amp;D 5e</dt><dd>Built around the 2024 rules</dd></div>
+    </dl>
+
+    <section class="section frame" id="adventures" aria-labelledby="adventures-title">
+      <h2 id="adventures-title">Three adventures in Lantern Quay</h2>
+      <div class="catalogue">
+        <article data-product="docks">
+          <p class="eyebrow">The docks</p>
+          <h3>The Bell Beneath the Docks</h3>
+          <p>Rescue a ferry apprentice, follow the trail of two disappearances and descend to a wreck before the tide closes over it.</p>
+          <p class="availability" data-pending>Full pack coming soon</p>
+          <a class="button primary" data-buy hidden>Buy the docks adventure</a>
+        </article>
+        <article data-product="market">
+          <p class="eyebrow">Copper Market</p>
+          <h3>The Thirteenth Stall</h3>
+          <p>A secret auction is selling the charter that protects the market’s traders. Expose the forgery, win the bidding or take the charter back.</p>
+          <p class="availability" data-pending>Full pack coming soon</p>
+          <a class="button primary" data-buy hidden>Buy the market adventure</a>
+        </article>
+        <article data-product="old-town">
+          <p class="eyebrow">Old Town</p>
+          <h3>The House That Changed Streets</h3>
+          <p>Board a walking house, get its tenants out and find a safe place for it to settle before it jams beneath the North Arch.</p>
+          <p class="availability" data-pending>Full pack coming soon</p>
+          <a class="button primary" data-buy hidden>Buy the Old Town adventure</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="quay-section" id="quay" aria-labelledby="quay-title">
+      <div class="section frame map-layout">
+        <div class="map-copy">
+          <h2 id="quay-title">Explore the docks</h2>
+          <p>Follow the waterfront from the watch hut to the north tide stairs.</p>
+          <div class="map-caption" aria-live="polite" aria-atomic="true">
+            <h3 id="map-name">The jetty</h3>
+            <p id="map-description">The last ferry stops here. The boards are slick and there’s a ladder over the side.</p>
+          </div>
+        </div>
+        <div class="map">
+          <canvas width="1200" height="800" data-quay-map role="img" aria-label="Lantern Quay, with a jetty at the centre, a watch hut to the west, a salvage yard inland and tide stairs to the east.">Lantern Quay has an east–west waterfront with a central jetty.</canvas>
+          <div class="map-buttons" role="group" aria-label="Places on the quay" hidden>
+            <button type="button" aria-label="Watch hut" aria-pressed="false" style="--x:21.25%;--y:26.25%" data-place="The watch hut" data-description="The watch warden keeps the harbour register beside a low coal fire.">A</button>
+            <button type="button" aria-label="Jetty" aria-pressed="true" style="--x:47.08%;--y:69.69%" data-place="The jetty" data-description="The last ferry stops here. The boards are slick and there’s a ladder over the side.">B</button>
+            <button type="button" aria-label="Salvage yard" aria-pressed="false" style="--x:66.88%;--y:26.56%" data-place="The salvage yard" data-description="Crates surround a winch. Its line runs taut into the dark harbour.">C</button>
+            <button type="button" aria-label="North tide stairs" aria-pressed="false" style="--x:88.13%;--y:48.75%" data-place="The north tide stairs" data-description="The stone steps end at a salt-stained iron hatch.">D</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section frame free" aria-labelledby="free-title">
+      <div>
+        <p class="eyebrow">Free encounter</p>
+        <h2 id="free-title">The Rope at Low Water</h2>
+        <p>A 15–20 minute 5e opening scene with checks, a waterfront map and a clue into the harbour mystery.</p>
+      </div>
+      <a class="button primary" href="./free-encounter.html">Read and print the encounter</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="frame footer-content">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>Lantern Quay</a>
+      <p>Independent adventures compatible with Dungeons &amp; Dragons 5e</p>
+    </div>
+  </footer>
+</body>
+</html>
