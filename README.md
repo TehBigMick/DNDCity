@@ -1,6 +1,6 @@
 # Lantern Quay
 
-Lantern Quay is the dndCity.com storefront for four independent adventures for Dungeons & Dragons 5e. The public website and free adventures live in `dist/`.
+Lantern Quay is the dndCity.com storefront for five independent adventures for Dungeons & Dragons 5e. The public website and free adventures live in `dist/`.
 
 ## Run locally
 
@@ -8,6 +8,7 @@ Run `python3 -m http.server 8000 --directory dist` and open [http://localhost:80
 
 ## Adventures
 
+- **The Clockwork Crossing** is a free 45–60 minute one-shot for a first-time Dungeon Master and 3–4 level 1 characters. The [adventure page](dist/clockwork-crossing.html) links to the guide, at-table sheet and map.
 - **The First Lantern** is a free introduction for 3–4 level 1 characters. Its [adventure page](dist/first-lantern.html) links to the DM guide, four character sheets and a player map.
 - **The Bell Beneath the Docks** is a level 3 harbour mystery.
 - **The Thirteenth Stall** is a level 3 auction caper in Copper Market.
