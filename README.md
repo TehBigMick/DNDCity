@@ -1,27 +1,27 @@
 # Lantern Quay
 
-Lantern Quay is the dndCity.com storefront for five independent adventures for Dungeons & Dragons 5e. The public website and free adventures live in `dist/`.
+The dndCity.com storefront offers three level 3 one-shots, a bundle of those three, a level 1–5 campaign and three free adventures for D&D 5e.
 
 ## Run locally
 
-Run `python3 -m http.server 8000 --directory dist` and open [http://localhost:8000/](http://localhost:8000/). The site has no build step.
+Run `python3 -m http.server 8000 --directory dist` and open [the local storefront](http://localhost:8000/). The static site needs no build step.
 
-## Adventures
+## Cloudflare deployment
 
-- **The Clockwork Crossing** is a free 45–60 minute one-shot for a first-time Dungeon Master and 3–4 level 1 characters. The [adventure page](dist/clockwork-crossing.html) links to the guide, at-table sheet and map.
-- **The First Lantern** is a free introduction for 3–4 level 1 characters. Its [adventure page](dist/first-lantern.html) links to the DM guide, four character sheets and a player map.
-- **The Bell Beneath the Docks** is a level 3 harbour mystery.
-- **The Thirteenth Stall** is a level 3 auction caper in Copper Market.
-- **The House That Changed Streets** is a level 3 rescue in Old Town.
+`worker.mjs` serves the public files from Workers KV and uses D1 to record orders. The production Worker is `dndcity` and uses the zone's custom domains.
 
-The free 5e encounter, *The Rope at Low Water*, is printable from the site. The three paid ZIPs are delivered by the checkout provider.
+- Run `python3 deploy/prepare_files.py OUTPUT` from the repository root to prepare public files. Pass `--pack SKU ZIP` for each matching ZIP in `deploy/catalogue.json`. Keep those ZIPs outside the repository and `dist/`.
+- Upload each file in `OUTPUT/chunks/` to the private KV namespace under its filename and bind the namespace as `FILES`. Bind the manifest's `public` and `paid` objects as `ASSET_MANIFEST` and `PACK_MANIFEST`, respectively.
+- Apply `deploy/orders.sql` to the D1 database before enabling checkout and bind the database as `ORDERS`. The Worker stores a hash of the Stripe session ID, the purchased SKU and the payment status.
 
-## Storefront setup
+## Stripe checkout
 
-1. Upload each finished 5e pack to a digital-product checkout. The docks adventure was priced at US$9.
-2. Add the corresponding public HTTPS checkout URLs in `dist/store-config.js`. A purchase link appears for each configured adventure.
-3. Deploy `dist/` to the store's static host.
+Use one-off prices from `deploy/catalogue.json`. Each Stripe Payment Link redirects buyers to `https://dndcity.com/order?session_id={CHECKOUT_SESSION_ID}` after checkout.
 
-The storefront runs with the harbour illustration disabled. To restore the original artwork, place `harbour.webp` in `dist/assets/` and set `harbourArt` to `'./assets/harbour.webp'` in `dist/store-config.js`. Store the finished paid ZIPs in your checkout provider's delivery area, outside the public site.
+1. Register `https://dndcity.com/stripe/webhook` for `checkout.session.completed`, `checkout.session.async_payment_succeeded` and `checkout.session.async_payment_failed`. Store its signing secret in the Worker secret `STRIPE_WEBHOOK_SECRET`.
+2. Set the Worker's JSON binding `CHECKOUT_LINKS` to a mapping of catalogue SKUs to objects with a Stripe Payment Link `id` and `url`. The Worker shows the corresponding buy button when the link, pack and webhook secret are present. Use `STRIPE_MODE=test` on a separate test deployment.
+3. Test a complete Stripe sandbox purchase and open the delivered ZIP. Keep the redirect and webhook on the same deployment during testing.
 
-Lantern Quay is an independent fantasy setting. The adventures are compatible with Dungeons & Dragons 5e.
+Buyers return to their order page to download the ZIP after Stripe has confirmed payment. Give customers that page again if they need to resume a download. Order URLs are private and confer access to the purchased files.
+
+The adventure setting is independent and compatible with Dungeons & Dragons 5e.

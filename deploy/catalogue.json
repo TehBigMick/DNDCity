@@ -1,0 +1,37 @@
+{
+  "docks": {
+    "name": "The Bell Beneath the Docks",
+    "description": "A level 3 D&D 5e harbour mystery. Find a missing ferry apprentice and reach a sunken wreck before the tide closes in. Includes the adventure PDF, printable handouts and maps.",
+    "amount": 900,
+    "currency": "usd",
+    "filename": "The_Bell_Beneath_the_Docks_Adventure_Pack.zip"
+  },
+  "market": {
+    "name": "The Thirteenth Stall",
+    "description": "A level 3 D&D 5e auction caper. Infiltrate a secret sale in Copper Market and recover the charter that protects its traders. Includes the adventure PDF, printable handouts and maps.",
+    "amount": 900,
+    "currency": "usd",
+    "filename": "The_Thirteenth_Stall_Adventure_Pack.zip"
+  },
+  "old-town": {
+    "name": "The House That Changed Streets",
+    "description": "A level 3 D&D 5e rescue. Board a walking house, get its tenants to safety and guide it clear of the North Arch. Includes the adventure PDF, printable handouts and maps.",
+    "amount": 900,
+    "currency": "usd",
+    "filename": "The_House_That_Changed_Streets_Adventure_Pack.zip"
+  },
+  "bundle": {
+    "name": "Lantern Quay One-Shot Bundle",
+    "description": "Three level 3 D&D 5e adventures in one download. Includes The Bell Beneath the Docks, The Thirteenth Stall and The House That Changed Streets with their handouts and maps.",
+    "amount": 2100,
+    "currency": "usd",
+    "filename": "Lantern_Quay_One_Shot_Bundle.zip"
+  },
+  "highwater": {
+    "name": "The Highwater Oath",
+    "description": "A five-session D&D 5e beginner campaign from level 1 to 5. Includes a Dungeon Master guide, four ready-to-play characters, five gridded maps and four printable handouts.",
+    "amount": 2400,
+    "currency": "usd",
+    "filename": "The_Highwater_Oath_Campaign_Pack.zip"
+  }
+}
